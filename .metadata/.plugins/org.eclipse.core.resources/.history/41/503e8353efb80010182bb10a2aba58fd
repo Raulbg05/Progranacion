@@ -1,0 +1,31 @@
+/*
+*  Descripción: Programa que muestra las tablas del 1 al 10 guardados en array bidimensional
+ * Autor: Raúl Beltrán
+ * Fecha: 31/10/2025
+ */
+package ejercicio2;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+		
+	final int TOTAL_NUM = 10;
+		
+	int [][] bidimensional;
+	bidimensional = new int [TOTAL_NUM][TOTAL_NUM];
+	
+		for (int y = 0; y < 10; y++) {
+			for (int x = 0; x < 10; x++) {
+				bidimensional[y][x] = (x + 1) * (y + 1);
+			}
+		}
+		
+		for (int y = 0; y < 10; y++) {	
+			for (int x = 0; x < 10; x++) {
+				System.out.print(bidimensional[y][x] + "\t ");
+			}
+			System.out.println();
+		}
+	}
+
+}

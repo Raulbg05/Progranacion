@@ -1,0 +1,26 @@
+package ejercicio2;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+		
+	final int TOTAL_NUM = 10;
+		
+	int [][] bidimensional;
+	bidimensional = new int [TOTAL_NUM][TOTAL_NUM];
+	
+		for (int y = 0; y < 10; y++) {
+			for (int x = 01; x < 10; x++) {
+				bidimensional[x][y] = (x + 1) * (y + 1);
+			}
+		}
+		
+		for (int y = 0; y < 10; y++) {	
+			for (int x = 0; x < 10; x++) {
+				System.out.print(bidimensional[y][x] + "\t ");
+			}
+			System.out.println();
+		}
+	}
+
+}

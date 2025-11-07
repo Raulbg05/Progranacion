@@ -1,0 +1,76 @@
+package ejercicio12;
+
+import java.util.Scanner;
+
+public class Ejercicio12 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+			
+	final int TOTAL_NUM = 10;
+	
+	int[] numeros = new int [TOTAL_NUM];
+	
+	String Opcion, Resultado = "";
+	int resultado = 0, v, p;
+	
+		for (int posicion = 0; posicion < numeros.length; posicion++) {
+			numeros[posicion] = 69696969;
+		}
+	
+	while (resultado != 3) {
+	System.out.print("a. Mostrar valores."
+			+ "\nb. Introducir valor."
+			+ "\nc. Salir"
+			+ "\nIntroduce una opcion: ");
+	Opcion = teclado.nextLine();
+	
+		switch (Opcion) {
+		case "a":
+			resultado = 1;
+			break;
+		case "b":
+			resultado = 2;
+			break;
+		case "c":
+			resultado = 3;
+			break;
+		default:
+			Resultado = "Opción introducida errónea, solo han de ser la 'a', la 'b' o la 'c'.";
+		}
+	}
+		
+		
+		if (resultado == 1) {
+			System.out.println("\nLos números son:");
+			for (int posicion = 0; posicion < numeros.length; posicion++) {
+				System.out.println(numeros[posicion]);
+			}
+		}
+		
+		else if (resultado == 2) {
+			System.out.print("Introduce el número que quieras añadir: ");
+			v = teclado.nextInt();
+			System.out.print("Introduce la posición en la que lo quieras introducir (del 1 al 10): ");
+			p = teclado.nextInt();
+			 if (p >= 1 && p <= 10) {
+				 p--;
+                 numeros[p] = v;
+                 System.out.println("Valor introducido correctamente.");
+             } else {
+                 System.out.println("Posición no válida.");
+             }
+		}
+		
+		else if (resultado == 3) {
+			System.out.print("Saliendo del programa...");
+		}
+		
+		else {
+			System.out.print(Resultado);
+		}
+		
+	teclado.close();	
+	}
+
+}

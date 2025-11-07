@@ -1,0 +1,31 @@
+package ejercicio1;
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+
+	final int TOTAL_NUM = 5;
+	
+	int [][] bidimensional;
+	bidimensional = new int [TOTAL_NUM][TOTAL_NUM];
+
+	int suma = 0;
+	
+	for (int i = 0; i < 5; i++) {	
+		for (int x = 0; x < 5; x++) {
+			suma = suma + 1;
+			bidimensional[i][x] = suma;
+		}
+	}
+	
+	for (int i = 0; i < 5; i++) {	
+		for (int x = 0; x < 5; x++) {
+			System.out.print(bidimensional[i][x] + "\t ");
+		}
+	}
+	
+	
+	
+	}
+
+}

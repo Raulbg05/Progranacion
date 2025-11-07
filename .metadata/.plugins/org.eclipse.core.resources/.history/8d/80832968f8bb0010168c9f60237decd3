@@ -1,0 +1,38 @@
+package metodosTOCHO;
+
+public class Metedos1 {
+
+	public static void main(String[] args) {
+		
+		
+	int [] vector = new int [3];
+	int [] vector1 = {1, 2, 3};
+	
+	// Muestra el vector sin el método aplicado
+		for (int posicion = 0; posicion < vector.length; posicion++) {
+			System.out.print(vector[posicion] + "\t");
+		}
+	
+	// Se le aplica el metodo a el vector creado y se lo muestra en el siguiente bucle for
+	vector1 = iniVector(vector);
+	System.out.println("\n" + "Después de ejecutar el metodo...");
+		
+		for (int posicion = 0; posicion < vector.length; posicion++) {
+			System.out.print(vector[posicion] + "\t");
+		}
+		
+		System.out.print("  ||||  ");
+		
+		for (int posicion = 0; posicion < vector1.length; posicion++) {
+			System.out.print("***" + vector1[posicion] + "\t");
+		}
+		
+	
+	// Método que cambia las 2 primeras posiciones de un vector a 50 y 100 respectivamente
+	}
+	public static int[] iniVector ( int[] paramVector) {
+		paramVector[0] = 50;
+		paramVector[1] = 100;
+		return paramVector;
+	}
+}

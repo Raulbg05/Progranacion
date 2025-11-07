@@ -1,0 +1,54 @@
+/*
+*  Descripción: Usuario introduce 10 números en 2 arrays y el programa dice si son iguales o no
+ * Autor: Raúl Beltrán
+ * Fecha: 31/10/2025
+ */
+package ejercicio17;
+
+import java.util.Scanner;
+
+public class Ejercio17 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+	
+	
+	final int TOTAL_NUM = 10;
+	int[] primerArray = new int [TOTAL_NUM];
+	int[] segundoArray = new int [TOTAL_NUM];
+	
+	int distintos = 0;
+	
+	System.out.println("Introduzca los 10 primeros valores del primer array:");
+		for (int posicion = 0; posicion < primerArray.length; posicion++) {
+			System.out.println("Introduce un número: ");
+			primerArray[posicion] = teclado.nextInt();
+		}
+		
+	System.out.println("\n" + "Introduzca los 10 primeros valores del segundo array:");
+		for (int posicion = 0; posicion < segundoArray.length; posicion++) {
+			System.out.println("Introduce un número: ");
+			segundoArray[posicion] = teclado.nextInt();
+		}
+		
+		for (int posicion = 0; posicion < segundoArray.length; posicion++) {
+			if (primerArray[posicion] != segundoArray[posicion]) {
+				distintos++;
+			}
+			else {
+			}
+		}
+		
+		if (distintos > 0) {
+			System.out.print("\n" + "Los arrays son diferentes.");
+		}
+		else {
+			System.out.print("\n" + "Los arrays son iguales");
+		}
+		
+		
+		
+	teclado.close();	
+	}
+
+}

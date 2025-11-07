@@ -1,0 +1,75 @@
+package ejercicio2;
+
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+		
+	String Texto, Texto1, Mayusculas, Mayusculas1;
+	int contadorDiferente = 0, diferenteMayus = 0;
+		
+	System.out.println("Introduce un texto:");
+	Texto = teclado.nextLine();
+	
+	System.out.println("Introduce otro texto:");
+	Texto1 = teclado.nextLine();
+	
+	char[] Textochar;
+	char[] Textochar1;
+	char[] Charmayus;
+	char[] Charmayus1;
+	
+	
+	Textochar = Texto.toCharArray();
+	Textochar1 = Texto1.toCharArray();
+	
+		if (Textochar.length != Textochar1.length) {
+			contadorDiferente = 1;
+		}
+		else {
+			for (int posicion = 0; posicion < Textochar1.length; posicion++) {
+				if (Textochar[posicion] != Textochar1[posicion]) {
+					contadorDiferente++;
+				}
+			}
+		}
+		
+		if (contadorDiferente > 0) {
+			System.out.print("Los textos son diferentes (diferenciando entre nayúsculas y minúsculas)");
+		}
+		else {
+			System.out.print("Los textos son iguales (diferenciando entre nayúsculas y minúsculas)");
+		}
+		
+	Mayusculas = Texto.toUpperCase();
+	Mayusculas1 = Texto1.toUpperCase();
+	
+	Charmayus = Mayusculas.toCharArray();
+	Charmayus1 = Mayusculas1.toCharArray();
+	
+		if (Charmayus.length != Charmayus1.length) {
+			diferenteMayus = 1;
+		}
+		else {
+			for (int posicion = 0; posicion < Charmayus1.length; posicion++) {
+				if (Charmayus[posicion] != Charmayus1[posicion]) {
+					diferenteMayus++;
+				}
+			}
+		}
+			
+			
+		if (diferenteMayus > 0) {
+			System.out.print("Los textos son diferentes (sin diferenciar entre nayúsculas y minúsculas)");
+		}
+		else {
+			System.out.print("Los textos son iguales (sin diferenciar entre nayúsculas y minúsculas)");
+		}
+			
+		
+	teclado.close();	
+	}
+
+}

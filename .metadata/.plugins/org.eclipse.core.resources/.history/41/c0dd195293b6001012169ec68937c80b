@@ -1,0 +1,40 @@
+package ejercicio19;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ejercicio19 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+	
+	final int TOTAL_NUM = 8;
+	
+	int[] elo = new int [TOTAL_NUM]; 
+	int[] eloDos = new int [TOTAL_NUM];
+	
+	
+		System.out.println("8 puntuaciones de ajedrez:");
+
+			for (int posicion = 0; posicion < elo.length; posicion++) {
+				System.out.println("Introduce una puntuacion (entre 1000 y 2800): ");
+				elo[posicion] = teclado.nextInt(); 
+				
+				while (elo[posicion] < 0 || elo[posicion] > 3000) {
+					System.out.println("La puntuación es probablemente errónea, introduce una que "
+							+ "no supere los 3000 ni sea menor que 0:");
+					elo[posicion] = teclado.nextInt();					
+				}
+			}
+		Arrays.sort(elo);
+		for (int posicion = 0; posicion < elo.length; posicion++) {
+			eloDos[posicion] = elo[7 - posicion];
+		}
+			
+			for (int posicion = 0; posicion < elo.length; posicion++) {
+				System.out.println(elo[posicion]);
+			}
+		
+	}
+
+}

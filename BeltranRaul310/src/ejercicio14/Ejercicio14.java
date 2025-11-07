@@ -1,0 +1,38 @@
+/*
+*  Descripción: Programa que crea 1 array con una secuencia de valores del 1 al 10
+ * Autor: Raúl Beltrán
+ * Fecha: 31/10/2025
+ */
+package ejercicio14;
+
+import java.util.Scanner;
+
+public class Ejercicio14 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+	
+	final int TOTAL_NUM = 55;	// 1 + 2 + 3 + ... + 10 = 55 → tamaño total del array
+	int[] secuencia = new int [TOTAL_NUM];
+	
+	int indice = 0; 	// Variable para saber en qué posición del array vamos escribiendo
+	
+	
+		// Bucle externo: recorre los valores del 1 al 10
+	    for (int valor = 1; valor <= 10; valor++) {		 
+	    	
+	    	// Bucle interno: repite el valor actual tantas veces como su número indica
+            // Ejemplo: cuando valor = 3 → se repite 3 veces
+	        for (int repeticion = 0; repeticion < valor; repeticion++) {
+	            secuencia[indice] = valor;	// Guardamos el número en la posición actual
+	            indice++;					// Avanzamos una posición en el array
+	        }
+	    }
+	    for (int posicion = 0; posicion < secuencia.length; posicion++) {
+	    	System.out.println(secuencia[posicion]);
+	    }
+	    
+	    teclado.close();
+	}
+
+}

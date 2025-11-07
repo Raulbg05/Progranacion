@@ -1,0 +1,95 @@
+package metodosTOCHO;
+
+import java.util.Scanner;
+
+public class Metodos {
+
+	public static void main(String[] args) {
+		Scanner teclado= new Scanner(System.in);
+		
+		double operacion;
+		boolean par;
+		boolean impar;
+		long fact;
+		
+		int numero;
+		double a,b;
+		byte opcion;
+		
+		System.out.print("Dime un número a");
+		a = teclado.nextDouble();
+		System.out.print("Dime un número b");
+		b = teclado.nextDouble();
+		
+		System.out.print("Elige tu opción para calcular 'a' y 'b':" + "\n1 para sumar." + "\n2 para restar" + "\n3 para multiplicar" + "\n4 para dividir" + "\n5 para calcular el resto");
+		opcion = teclado.nextByte();
+		
+		while (opcion != 1 && opcion != 2 && opcion != 3  && opcion != 4 && opcion != 5) {
+			System.out.print("Opción incorrecta, solo puedes elegir el 1, 2, 3, 4, 5. Intentalo de nuevo");
+			opcion = teclado.nextByte();
+		}
+		
+		numero = 3;
+		par = esPar(numero);
+		impar = esImpar(numero);
+		fact = factorialNum(numero);
+		operacion = operacionNum(a,b,opcion);
+		
+		System.out.println(par);
+		System.out.println(impar);
+		System.out.println(fact);
+	}
+	// EsPar calcula si un valor es par. Devielve un tipo booleano
+	public static boolean esPar(int numero) {
+		boolean par;
+		if (numero % 2 == 0 ) {
+			par = true;
+		}
+		else {
+			par = false;
+		}
+	return par;
+	}
+	
+	//  EsPar calcula si un valor es impar. Devielve un tipo booleano
+	public static boolean esImpar(int numero) {
+		boolean impar;
+		if (numero % 2 != 0 ) {
+			impar = true;
+		}
+		else {
+			impar = false;
+		}
+	return impar;
+	}
+	
+	// factorialNum calcula el factorial de un valor. Devuelve el resultado
+	public static long factorialNum (int numero) {
+		long fact = 1;														//Hace falta usar long porque los factoriales suelen dar resultados muy altos a partir de 10
+            for (int condicion = 1; condicion <= numero; condicion++) {
+                fact *= condicion;
+            }
+	return fact;
+	}
+	
+	public static double operacionNum (double a, double b, double opcion) {
+		double operacion = 0;
+			
+			if (opcion == 1) {
+				operacion = a + b;
+			}
+			else if (opcion == 2) {
+				operacion = a - b;
+			}
+			else if (opcion == 3) {
+				operacion = a * b;
+			}
+			else if (opcion == 4) {
+				operacion = a / b;
+			}
+			else {
+				opcion = a % b;
+			}
+		return operacion;
+	}
+}

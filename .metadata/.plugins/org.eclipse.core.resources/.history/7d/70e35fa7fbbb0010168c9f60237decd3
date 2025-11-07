@@ -1,0 +1,47 @@
+package ejercicio3;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+	
+	int inicioPalabra = 0, finPalabra;
+	String Completo = "";
+    String[] palabra = new String [3];
+    
+    System.out.print("Introduce tu nombre y dos apellidos");
+	Completo = teclado.nextLine();
+
+	
+	for (int posicion = 0; posicion <= Completo.length(); posicion++) {
+		if (posicion == Completo.length() || Completo.charAt(posicion) == ' ') {
+			for (int lugar = 0; lugar < palabra.length; lugar++) {
+				finPalabra = posicion;
+				palabra[lugar] = Completo.substring(inicioPalabra, finPalabra);
+				System.out.print(palabra + "\n");
+				inicioPalabra = posicion + 1;
+			}
+		}
+	}
+	
+	String nombre = palabra[0];
+	String apellido = palabra[1];
+	String apellido1 = palabra[2];
+	
+	String Nombre3 = nombre.substring(0, 2);
+	String Mayus = Nombre3.toUpperCase();
+	String Apellido3 = apellido.substring(0, 2);
+	String Mayus1 = Apellido3.toUpperCase();
+	String Apellido13 = apellido1.substring(0, 2);
+	String Mayus2 = Apellido13.toUpperCase();
+	
+	
+	System.out.print("Tu usuario es: " + (Mayus + Mayus1 + Mayus2));
+	
+	
+	teclado.close();
+	}
+
+}

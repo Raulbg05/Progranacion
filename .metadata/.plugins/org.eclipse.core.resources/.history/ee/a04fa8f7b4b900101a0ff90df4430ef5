@@ -1,0 +1,53 @@
+/*
+*  Descripción: Programa que pide al usuario que introduzca 5 notas de 4 alumnos distintos
+*  y le diga la media, nota más alta y nota más baja de cada uno.
+ * Autor: Raúl Beltrán
+ * Fecha: 04/11/2025
+ */
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class Ejercicio4 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+
+	double notaBaja, notaAlta;
+	
+	final int TOTALMAX_ALUM = 4, TOTALMAX_ASIG = 5;
+	
+    double[][] notas = new double[TOTALMAX_ALUM][TOTALMAX_ASIG];
+
+	    // Introducir notas y calcular media por alumno
+	    for (int i = 0; i < TOTALMAX_ALUM; i++) {
+	        double suma = 0; // reiniciar suma para cada alumno
+	        System.out.println("Introduce las notas del alumno " + (i + 1) + ": ");
+	        
+	        System.out.print("Nota nº1: ");
+	        notas[i][0] = teclado.nextDouble();
+	        notaBaja = notas[i][0];
+	        notaAlta = notas[i][0];
+	
+	        for (int j = 1; j < TOTALMAX_ASIG; j++) {
+	            System.out.print("Nota nº" + (j + 1) + ": ");
+	            notas[i][j] = teclado.nextDouble();
+	            suma += notas[i][j]; // sumamos cada nota
+	            
+		        if (notas[i][j] > notaAlta) {
+		        	notaAlta = notas[i][j];
+		        }
+		        else if (notas[i][j] < notaBaja) {
+		        	notaBaja = notas[i][j];
+		        }
+	        }
+	
+	        double media = suma / TOTALMAX_ASIG;
+	        System.out.println("→ La nota media del alumno " + (i + 1) + " es: " + media + " , la nota más baja es: " + notaBaja + ", la nota más alta es: " + notaAlta);
+	        System.out.println("--------------------------------------");
+	    }
+    
+	teclado.close();
+	}
+
+}

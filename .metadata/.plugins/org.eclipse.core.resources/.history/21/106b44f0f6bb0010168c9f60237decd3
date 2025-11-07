@@ -1,0 +1,27 @@
+package metodosTOCHO;
+
+public class Metedos1 {
+
+	public static void main(String[] args) {
+		
+	int [] vector = {5, 10, 15};
+	
+		for (int posicion = 0; posicion < vector.length; posicion++) {
+			System.out.println(vector[posicion] + "\t");
+		}
+	
+	iniVector(vector);
+	System.out.println("Después de ejecutar el metodo...");
+		
+		for (int posicion = 0; posicion < vector.length; posicion++) {
+			System.out.print(vector[posicion] + "\t");
+		}
+		
+	
+
+	}
+	public static void iniVector ( int[] paramVector) {
+		paramVector[0] = 50;
+		paramVector[1] = 100;
+	}
+}

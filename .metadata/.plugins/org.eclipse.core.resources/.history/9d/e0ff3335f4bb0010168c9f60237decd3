@@ -1,0 +1,44 @@
+package ejercicio2;
+
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+		
+	String Texto, Texto1;
+	int contadorIgual = 0, contadorDiferente = 0;
+		
+	System.out.println("Introduce un texto:");
+	Texto = teclado.nextLine();
+	
+	System.out.println("Introduce otro texto:");
+	Texto1 = teclado.nextLine();
+	
+	char[] Textochar;
+	char[] Textochar1;
+	
+	Textochar = Texto.toCharArray();
+	Textochar1 = Texto1.toCharArray();
+	
+		for (int posicion = 0; posicion <= Textochar.length; posicion++) {
+			if (Textochar[posicion] != Textochar1[posicion]) {
+				contadorDiferente++;
+			}
+			else if (Textochar[posicion] == Textochar1[posicion]){
+				contadorIgual++;
+			}
+		}
+		
+		if (contadorDiferente > 0) {
+			System.out.print("Los textos son diferentes");
+		}
+		else {
+			System.out.print("Los textos son iguales");
+		}
+		
+	teclado.close();	
+	}
+
+}

@@ -1,0 +1,32 @@
+package ejercicio16;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ejercicio16 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+		
+	final int TOTAL_NUM = 55;	// 1 + 2 + 3 + ... + 10 = 55 → tamaño total del array
+	int[] secuencia = new int [TOTAL_NUM];
+	
+	Arrays.fill(secuencia,0,0,1);
+	Arrays.fill(secuencia,1,2,2);
+	Arrays.fill(secuencia,3,5,3);
+	Arrays.fill(secuencia,6,9,4);
+	Arrays.fill(secuencia,10,14,5);
+	Arrays.fill(secuencia,15,20,6);
+	Arrays.fill(secuencia,21,27,7);
+	Arrays.fill(secuencia,28,35,8);
+	Arrays.fill(secuencia,36,44,9);
+	Arrays.fill(secuencia,45,54,10);
+	
+		for (int posicion = 0; posicion < secuencia.length; posicion++) {
+			System.out.println(secuencia[posicion]);
+		}
+		
+	teclado.close();	
+	}
+
+}

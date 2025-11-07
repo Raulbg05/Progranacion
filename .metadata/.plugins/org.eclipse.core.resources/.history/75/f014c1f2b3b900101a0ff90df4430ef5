@@ -1,0 +1,52 @@
+package ejercicio5;
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+	
+	final int nSueldos;
+
+	System.out.print("Cantidad de sueldos a registrar: ");
+	nSueldos = teclado.nextInt();
+	
+	double[][] brechaSalarial = new double [nSueldos][(2)]; 
+	
+	double sumaVaron = 0, sumaMujer = 0, mediaVaron = 0, mediaMujer = 0;
+	
+		for (int posicion = 0; posicion < nSueldos; posicion++) {
+			byte genero;
+			System.out.print("Género del sueldo nº" + (posicion + 1) + " (0 para varón y 1 para mujer): ");
+			genero = teclado.nextByte();
+			
+			while (genero != 0 && genero != 1) {
+				System.out.print("Valor no válido. Introduce 0 (varón) o 1 (mujer): ");
+				genero = teclado.nextByte();
+			}	
+				if (genero == 0) {
+					System.out.print("Sueldo de hombre: ");
+					brechaSalarial[0][posicion] = teclado.nextDouble();
+				}
+				else {
+					System.out.print("Sueldo de mujer: ");
+					brechaSalarial[1][posicion] = teclado.nextDouble();
+				}
+		}
+		
+		for (int posicion = 0; posicion < (nSueldos / 2); posicion++) {
+			sumaVaron += brechaSalarial[0][posicion];
+		}
+		
+		for (int posicion = 0; posicion < (nSueldos / 2); posicion++) {
+			sumaMujer += brechaSalarial[0][posicion];
+		}
+		
+		mediaVaron = sumaVaron / (nSueldos / 2);
+		mediaMujer = sumaMujer / (nSueldos / 2);
+		
+		System.out.print(mediaMujer + "\n" + mediaVaron);
+	}
+
+}

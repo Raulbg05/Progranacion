@@ -1,0 +1,53 @@
+package ejercicio4;
+
+import java.util.Scanner;
+
+public class Ejercicio4 {
+
+	public static void main(String[] args) {
+	Scanner teclado= new Scanner(System.in);
+
+	double notaBaja, notaAlata, media = 0;
+	
+	final int TOTALMAX_ALUM = 4, TOTALMAX_ASIG = 5;
+	
+	double [][] notas;
+	notas = new double [TOTALMAX_ASIG][TOTALMAX_ALUM];
+	
+	
+	System.out.println("Introduce las notas del primer alumno: ");
+	
+		for (int y = 0; y < TOTALMAX_ASIG; y++) {
+			System.out.println("Introduce la nota nº" + (y + 1) + ": ");
+			notas[y][0] = teclado.nextDouble();
+			for (y = 0; y < TOTALMAX_ASIG; y++) {
+				notas[y][0] += notas[y][0];
+			}
+			media = notas[y][0] / TOTALMAX_ASIG;
+		}
+		System.out.print(media);
+		
+	System.out.println("Introduce las notas del segundo alumno: ");
+		
+		for (int y = 0; y < TOTALMAX_ASIG; y++) {
+			System.out.println("Introduce la nota nº" + (y + 1));
+			notas[y][1] = teclado.nextDouble();
+		}
+		
+	System.out.println("Introduce las notas del tercer alumno: ");
+		
+		for (int y = 0; y < TOTALMAX_ASIG; y++) {
+			System.out.println("Introduce la nota nº" + (y + 1));
+			notas[y][2] = teclado.nextDouble();
+		}
+		
+	System.out.println("Introduce las notas del cuarto alumno: ");
+		
+		for (int y = 0; y < TOTALMAX_ASIG; y++) {
+			System.out.println("Introduce la nota nº" + (y + 1));
+			notas[y][3] = teclado.nextDouble();
+		}
+
+	}
+
+}
