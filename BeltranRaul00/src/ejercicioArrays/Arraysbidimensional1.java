@@ -7,57 +7,49 @@ public class Arraysbidimensional1 {
 
 	public static void main(String[] args) {
 		
-	int[][] temperatura;				// Poner solo un "[]" es para inicializar un array normal, si pones 2 "[][]" es para uno bidimensional
-	String MesDiaCaluroso;
-	temperatura = new int [12][30];
-	int temperaturaMax = 0;
-	int temperaturaMin = 0;
-	int diaCaluroso;
-	int menorDiez;
-	int contador = 0;
+		  int[][] temperatura;  //Declaracion
+	        temperatura= new int[30][12];   // Instanciación
+	        int temperaturaMax,temperaturaMin,aplitudTermica;
+	        
+	        for(int dia=0;dia<30;dia++)
+	        {
+	            for(int mes=0; mes<12; mes++)
+	            {
+	                temperatura[dia][mes]=(int)(Math.random()*50);
+	                
+	            }
+	            
+	        }
+	        
+	        
+	        for(int mes=0; mes<12; mes++)
+	        {
+	            temperaturaMax=temperatura[0][mes];
+	            temperaturaMin=temperatura[0][mes];
+	            for(int dia=0;dia<30;dia++)
+	            {
+	                System.out.print(temperatura[dia][mes]+ "\t");
+	                if(temperaturaMax<temperatura[dia][mes])
+	                {
+	                    temperaturaMax=temperatura[dia][mes];
+	                    
+	                }
+	                if(temperaturaMin>temperatura[dia][mes])
+	                {
+	                    temperaturaMin=temperatura[dia][mes];
+	                    
+	                }
+	            }
+	            aplitudTermica=temperaturaMax-temperaturaMin;
+	            System.out.println("-------------------------------------------------------");
+	            System.out.println("\n" + "La maxima temperatura del mes "+(mes+1)+": "+ temperaturaMax);
+	            System.out.println("La minima temperatura del mes "+(mes+1)+": "+ temperaturaMin);
+	            System.out.println("La aplitud termica del mes "+(mes+1)+": "+ aplitudTermica);
+	            System.out.println("-------------------------------------------------------");
+	        
+	            
+	        }
+	        
+	    }
 
-	for (int dia = 0; dia < 30; dia++) 
-	{
-		for (int mes = 0; mes < 12; mes++) 
-		{
-			temperatura[dia][mes] = (int)(Math.random()*42);
-		}
-	}
-	
-	for (int dia = 0; dia < 30; dia++) {
-		for (int mes = 0; mes < 12; mes++) {
-			System.out.print(temperatura[dia][mes] + "\t ");
-		}
-		System.out.println();
-	}
-	for (int mes = 0; mes < 12; mes++) {
-		temperaturaMax = temperatura[0][mes];			// Inicializamos temperaturaMax a la primera temperatura del primer dia del mes
-		temperaturaMin = temperatura[0][mes];
-		
-		diaCaluroso = 0;
-		menorDiez = 0;
-		for (int dia = 0; dia < 30; dia++) {
-			if (temperatura[dia][mes] > temperaturaMax) {
-				temperaturaMax = temperatura[dia][mes];
-				diaCaluroso = dia;
-			} 
-			if (temperatura[dia][mes] < temperaturaMin) {
-				temperaturaMin = temperatura[dia][mes];
-			}
-			if (temperatura[dia][mes] < 10) {
-				menorDiez = dia;
-				while (contador < 1) {
-			}
-		}
-			System.out.println ("Temperatura máxima del mes " + (mes + 1) + ": " + temperaturaMax);
-			System.out.println ("Temperatura mínima del mes " + (mes + 1) + ": " + temperaturaMin);
-			System.out.println ("El día con mayor temperatura del mes " + (mes + 1) + ": " + diaCaluroso);
-			System.out.println ("La amplitud térmica del mes " + (mes + 1) + ": " + (temperaturaMax - temperaturaMin));
-			System.out.println ("El primer día con menos de 10 grados del mes " + (mes + 1) + ": " + menorDiez);
-		}
-	
-	}
 }
-}
-
-

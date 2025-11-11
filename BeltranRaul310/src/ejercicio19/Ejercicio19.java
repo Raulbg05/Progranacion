@@ -21,23 +21,29 @@ public class Ejercicio19 {
 	
 		System.out.println("8 puntuaciones de ajedrez:");
 
-			for (int posicion = 0; posicion < elo.length; posicion++) {
+			// Inicio bucle pidiendole una puntuación en cada posicion de el array "elo"
+			for (int posicion = 0; posicion < elo.length; posicion++) {	
 				System.out.println("Introduce una puntuacion (entre 1000 y 2800): ");
 				elo[posicion] = teclado.nextInt(); 
 				
+				// Si la puntuación no está entre 0 y 3000 no se guardará y se le volverá a pedir hasta que introduzca una puntuación válida (entre 0 y 3000)
 				while (elo[posicion] < 0 || elo[posicion] > 3000) {
 					System.out.println("La puntuación es probablemente errónea, introduce una que "
 							+ "no supere los 3000 ni sea menor que 0:");
 					elo[posicion] = teclado.nextInt();					
 				}
 			}
+			
+		// Esta función ordena los numeros en el array "elo" de menor a mayor	
 		Arrays.sort(elo);
+		
+		// Y con este bucle introduczo los numeros ya ordenados de menor a mayor del array "elo" en orden inverso a un nuevo array "eloDos" para que las puntuaciones esten ordenadas de mayor a menor
 		for (int posicion = 0; posicion < elo.length; posicion++) {
 			eloDos[posicion] = elo[7 - posicion];
 		}
-			
+		
 		System.out.println("Las puntuaciones ordenadas de mayor a menor son:");			
-			for (int posicion = 0; posicion < elo.length; posicion++) {
+			for (int posicion = 0; posicion < eloDos.length; posicion++) {
 				System.out.println(eloDos[posicion]);
 			}
 	teclado.close();

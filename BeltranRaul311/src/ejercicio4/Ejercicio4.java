@@ -17,24 +17,24 @@ public class Ejercicio4 {
     final int TOTALMAX_ALUM = 4, TOTALMAX_ASIG = 5;
     double[][] notas = new double[TOTALMAX_ALUM][TOTALMAX_ASIG];
 
-        // 1️⃣ Primero: introducir todas las notas
-        for (int i = 0; i < TOTALMAX_ALUM; i++) {
-            System.out.println("Introduce las notas del alumno " + (i + 1) + ": ");
-            for (int j = 0; j < TOTALMAX_ASIG; j++) {
-                System.out.print("Nota nº" + (j + 1) + ": ");
-                notas[i][j] = teclado.nextDouble();
+        // introducir todas las notas
+        for (int posicion = 0; posicion < TOTALMAX_ALUM; posicion++) {
+            System.out.println("Introduce las notas del alumno " + (posicion + 1) + ": ");
+            for (int lugar = 0; lugar < TOTALMAX_ASIG; lugar++) {
+                System.out.print("Nota nº" + (lugar + 1) + ": ");
+                notas[posicion][lugar] = teclado.nextDouble();
             }
             System.out.println();
         }
 
-        // 2️⃣ Luego: calcular y mostrar media, nota más alta y más baja de cada alumno
-        for (int i = 0; i < TOTALMAX_ALUM; i++) {
+        // calcular y mostrar media, nota más alta y más baja de cada alumno
+        for (int posicion = 0; posicion < TOTALMAX_ALUM; posicion++) {
             double suma = 0;
-            notaBaja = notas[i][0];
-            notaAlta = notas[i][0];
+            notaBaja = notas[posicion][0];
+            notaAlta = notas[posicion][0];
 
-            for (int j = 0; j < TOTALMAX_ASIG; j++) {
-                double nota = notas[i][j];
+            for (int lugar = 0; lugar < TOTALMAX_ASIG; lugar++) {
+                double nota = notas[posicion][lugar];
                 suma += nota;
 
                 if (nota > notaAlta) {
@@ -45,7 +45,7 @@ public class Ejercicio4 {
             }
 
         double media = suma / TOTALMAX_ASIG;
-        System.out.println("→ Alumno " + (i + 1) + ": media = " + media +
+        System.out.println("→ Alumno " + (posicion + 1) + ": media = " + media +
                            ", nota más baja = " + notaBaja +
                            ", nota más alta = " + notaAlta);
         System.out.println("--------------------------------------");

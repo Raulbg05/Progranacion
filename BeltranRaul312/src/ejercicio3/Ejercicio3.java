@@ -20,16 +20,16 @@ public class Ejercicio3 {
     System.out.print("Introduce tu nombre y dos apellidos: ");
 	Completo = teclado.nextLine();
 
-	// Este bucle mete cada palabra del nombre completo en diferentes posiciones de un Vector
-	for (int posicion = 0; posicion <= Completo.length(); posicion++) {
-		if (posicion == Completo.length() || Completo.charAt(posicion) == ' ') {			
-				finPalabra = posicion;
-				palabra[lugar] = Completo.substring(inicioPalabra, finPalabra);
-				lugar++;
-				inicioPalabra = posicion + 1;
-			
+		// Este bucle mete cada palabra del nombre completo en diferentes posiciones de un Vector
+		for (int posicion = 0; posicion <= Completo.length(); posicion++) {
+			if (posicion == Completo.length() || Completo.charAt(posicion) == ' ') {			
+					finPalabra = posicion;
+					palabra[lugar] = Completo.substring(inicioPalabra, finPalabra);
+					lugar++;
+					inicioPalabra = posicion + 1;
+				
+			}
 		}
-	}
 	// Creo las cadenas de caracteres y les doy el valor correspondiente de la posicon en la que se encuentran en el Vector
 	String nombre = palabra[0];
 	String apellido = palabra[1];
