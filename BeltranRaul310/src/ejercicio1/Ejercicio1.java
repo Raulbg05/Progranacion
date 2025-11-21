@@ -27,7 +27,6 @@ public class Ejercicio1 {
 		for (int posicion = 0; posicion < numeros.length; posicion++) {
 		System.out.println(numeros[posicion]);
 		}
-	teclado.close();
 	}
 
 }
