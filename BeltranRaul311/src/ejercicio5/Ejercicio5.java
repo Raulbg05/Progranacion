@@ -27,10 +27,10 @@ public class Ejercicio5 {
 			System.out.print("Género del sueldo nº" + (posicion + 1) + " (0 para varón y 1 para mujer): ");
 			genero = teclado.nextByte();
 			
-			while (genero != 0 && genero != 1) {
-				System.out.print("Valor no válido. Introduce 0 (varón) o 1 (mujer): ");
-				genero = teclado.nextByte();
-			}	
+				while (genero != 0 && genero != 1) {
+					System.out.print("Valor no válido. Introduce 0 (varón) o 1 (mujer): ");
+					genero = teclado.nextByte();
+				}	
 			
 			System.out.print("Sueldo: ");
 			sueldo = teclado.nextDouble();

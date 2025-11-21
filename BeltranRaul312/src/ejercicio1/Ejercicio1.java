@@ -11,27 +11,28 @@ import java.util.Scanner;
 public class Ejercicio1 {
 
 	public static void main(String[] args) {
-	Scanner teclado= new Scanner(System.in);
-	
-	String Texto;
-	
-	int inicioPalabra = 0, finPalabra;
-    String[] palabra = new String [3];
-	
-	System.out.print("Introduce una frase: ");
-	Texto = teclado.nextLine();
-		
-		for (int posicion = 0; posicion <= Texto.length(); posicion++) {
-			if (posicion == Texto.length() || Texto.charAt(posicion) == ' ') {
-				for (int lugar = 0; lugar < 3; lugar++) {
-					finPalabra = posicion;
-					palabra[lugar] = Texto.substring(inicioPalabra, finPalabra);
-					System.out.print(palabra + "\n");
-					inicioPalabra = posicion + 1;
-				}
-			}
-		}
-	teclado.close();
-	}
+		Scanner teclado = new Scanner(System.in);
 
+		String texto;
+		int inicioPalabra = 0, finPalabra;
+
+		System.out.print("Introduce una frase: ");
+		texto = teclado.nextLine();
+
+		for (int posicion = 0; posicion <= texto.length(); posicion++) {
+		    // Si llegamos a un espacio o al final de la frase se detecta una palabra
+		    if (posicion == texto.length() || texto.charAt(posicion) == ' ') {
+		        finPalabra = posicion;
+		        
+		        // Solo imprimir si la palabra no está vacía (evita errores con espacios repetidos)
+		        if (finPalabra > inicioPalabra) {
+		            System.out.println(texto.substring(inicioPalabra, finPalabra));
+		        }
+
+		        inicioPalabra = posicion + 1;  // Mover el inicio a la siguiente palabra
+		    }
+		}
+
+		teclado.close();
+	}
 }
